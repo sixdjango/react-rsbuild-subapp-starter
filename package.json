@@ -11,12 +11,14 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.0"
+    "react-router-dom": "^6.22.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@django-freeman/react-eslint-config": "^0.1.2",
     "@rsbuild/core": "^0.3.11",
     "@rsbuild/plugin-react": "^0.3.11",
+    "@types/node": "^20.11.16",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
     "prettier": "^3.2.5",

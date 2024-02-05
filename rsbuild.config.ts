@@ -1,9 +1,11 @@
 import { defineConfig } from '@rsbuild/core'
 import { pluginReact } from '@rsbuild/plugin-react'
 import packageJson from './package.json'
+import envConfig from './env'
+
 export default defineConfig({
   server: {
-    port: 9527
+    port: envConfig.port
   },
   plugins: [pluginReact()],
   tools: {
