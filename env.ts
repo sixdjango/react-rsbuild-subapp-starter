@@ -1,4 +1,14 @@
+import { loadEnv } from '@rsbuild/core'
 import { z } from 'zod'
+const { publicVars } = loadEnv({ prefixes: ['REACT_APP_'] })
+const processPblVars: Record<string, string> = {}
+
+Object.keys(publicVars).forEach((key) => {
+  // 去除 process.env. 前缀，在 define 中使用。这样在前端使用时可以不用加 process.env. 前缀
+  if (key.startsWith('process.env.')) {
+    processPblVars[key.replace('process.env.', '')] = publicVars[key] || ''
+  }
+})
 
 const envConfigSchema = z.object({
   envModel: z.enum(['development', 'production']),
@@ -18,3 +28,5 @@ if (envConfig.success === false) {
 }
 
 export default envConfig.data
+
+export { processPblVars }
