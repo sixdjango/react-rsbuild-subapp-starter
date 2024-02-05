@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom/client'
+import '~/styles/index.less'
 import App from './App'
 import './public-path'
 
